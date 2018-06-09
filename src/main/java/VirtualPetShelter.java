@@ -10,13 +10,13 @@ public class VirtualPetShelter {
 		return pets.size();
 	}
 
-	public void addPet(VirtualPet pet) {
-		pets.put(pet.getName(), pet);
+	public void addPet(String pet) {
+		pets.put(pet, null);
 
 	}
 
-	public void remove(VirtualPet pet) {
-		pets.remove(pet.getName(), pet);
+	public void remove(String pet) {
+		pets.remove(pet);
 		
 	}
 	
@@ -33,8 +33,8 @@ public class VirtualPetShelter {
 		pets.put(null, pet);
 	}
 
-	public void playWithPet(VirtualPet pet) {
-		pets.put(null, pet)
+	public void playWithPet(String petName) {
+		pets.get(null);
 		
 	}
 

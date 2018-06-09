@@ -26,7 +26,7 @@ public class VirtualPetShelterTest {
 		int numberOfPetsBeforeRemove = testShelter.getPetCount();
 		testShelter.remove(newpet);
 		int numberOfPetsAfterRemove = testShelter.getPetCount();
-		assertThat(numberOfPetsAfterRemove, is(equalTo(numberOfPetsBeforeRemove + 1)));
+		assertThat(numberOfPetsAfterRemove, is(equalTo(numberOfPetsBeforeRemove - 1)));
 	}
 	
 	@Test
