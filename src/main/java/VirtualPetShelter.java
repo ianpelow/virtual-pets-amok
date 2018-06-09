@@ -32,7 +32,12 @@ public class VirtualPetShelter {
 	public void waterPet(VirtualPet pet) {
 		pets.put(null, pet);
 	}
+
+	public void playWithPet(VirtualPet pet) {
+		pets.put(null, pet)
+		
 	}
+
 
 
 }

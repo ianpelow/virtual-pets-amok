@@ -1,6 +1,7 @@
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -28,6 +29,38 @@ public class VirtualPetShelterTest {
 		assertThat(numberOfPetsAfterRemove, is(equalTo(numberOfPetsBeforeRemove + 1)));
 	}
 	
+	@Test
+	public void shouldFeedAllPets() {
+		VirtualPet petTestFeedAll = new VirtualPet(null, null, 10, 10);
+		testShelter.addPet(petTestFeedAll);
+		int preTest = petTestFeedAll.getHunger();
+		testShelter.feedPet(newpet);
+		int underTest = petTestFeedAll.getHunger();
+		Assert.assertTrue(preTest < underTest);
+	}
+	
+	@Test
+	public void shouldGiveAllPetsWater() {
+		VirtualPet petTestGiveAllWater = new VirtualPet(null, null, 10, 10);
+		testShelter.addPet(petTestGiveAllWater);
+		int preTest = petTestGiveAllWater.getThirst();
+		testShelter.waterPet(newpet);
+		int underTest = petTestGiveAllWater.getThirst();
+		assertTrue(preTest < underTest);
+	}	
+	
+	@Test
+	public void shouldPlayWithPet() {
+		VirtualPet petTestPlayWithPet = new VirtualPet(null, null, 0, 0);
+		testShelter.addPet(petTestPlayWithPet);
+		int preTest = petTestPlayWithPet.getHappiness();
+		testShelter.playWithPet(null);
+		int underTest = petTestPlayWithPet.getHappiness();
+		assertTrue(preTest < underTest);
+
+	}
+		
+		
 }
 
 //@Test

@@ -59,7 +59,7 @@ public class Organic extends VirtualPet {
 		thirst = amount;
 	}
 
-	public void playWithOrganicPet() {
+	public void playWithPet() {
 		happiness += amount;
 		health += amount;
 		thirst += amount / 5;

@@ -1,5 +1,6 @@
 
-public abstract class VirtualPet {
+public class VirtualPet {
+	
 	private String name;
 	private String description;
 	private int HEALTH_LEVEL = 100;
@@ -34,6 +35,14 @@ public abstract class VirtualPet {
 		happiness -= 2;
 		health -= 2;
 		
+	}
+
+	public int getHunger() {
+		return 0;
+	}
+
+	public int getThirst() {
+		return 0;
 	}
 	
 ////	public void getStatus () {
