@@ -14,12 +14,12 @@ public class VirtualPetShelterApp {
 		Random random = new Random();
 
 		VirtualPetShelter virtualPetShelter = new VirtualPetShelter();
-		VirtualPet Shadow = new OrganicDog("Shadow", "ORGANIC MALE - Well-behaved and intelligent Golden Retriever", 65, 40, 85, 90);
-		VirtualPet Chance = new OrganicDog("Chance", "ORGANIC MALE - Young and energetic American Bulldog", 50, 60, 90, 55);
-		VirtualPet Sassy = new OrganicCat("Sassy", "ORGANIC FEMALE - Eccentrically opinionated Himalayan", 40, 60, 50, 95);
-		VirtualPet Terminator = new RoboticDog("Terminator", "ROBOTIC MALE - One-person guard dog German Shepherd", 20, 75, 50);
-		VirtualPet KittyCatBot = new RoboticCat("KittyCatBot", "ROBOTIC FEMALE - cunning and independent", 25, 85, 85);
-		VirtualPet CuddlyKitty = new RoboticCat("CuddlyKitty", "ROBOTIC FEMALE - somehow provides extraordinary cuddles though composed of solid steel. Just come find out", 95, 30, 85);
+		VirtualPet Shadow = new OrganicDog("Shadow", "ORGANIC MALE | Well-behaved and intelligent Golden Retriever", 65, 40, 85, 90);
+		VirtualPet Chance = new OrganicDog("Chance", "ORGANIC MALE | Young and energetic American Bulldog", 50, 60, 90, 55);
+		VirtualPet Sassy = new OrganicCat("Sassy", "ORGANIC FEMALE | Eccentrically opinionated Himalayan", 40, 60, 50, 95);
+		VirtualPet Terminator = new RoboticDog("Terminator", "ROBOTIC MALE | One-person guard dog | German Shepherd", 20, 75, 50);
+		VirtualPet KittyCatBot = new RoboticCat("KittyCatBot", "ROBOTIC FEMALE | cunning and independent | Siamese", 25, 85, 85);
+		VirtualPet CuddlyKitty = new RoboticCat("CuddlyKitty", "ROBOTIC FEMALE | somehow provides extraordinary cuddles though composed of solid steel. Just come find out | Ragdoll", 95, 30, 85);
 		
 		virtualPetShelter.addPet(Shadow);
 		virtualPetShelter.addPet(Chance);
@@ -32,9 +32,12 @@ public class VirtualPetShelterApp {
 		System.out.println("Welcome to the Virtual Pet Shelter!");
 		System.out.println();
 		System.out.println("This is the current status of our pets: ");
+		System.out.println();
 
 		while (continueWithApp = true) {
 			virtualPetShelter.displayStatus();
+			System.out.println();
+			System.out.println("Current litterbox level: ");
 			System.out.println();
 			System.out.println("What would you like to do?");
 			System.out.println("__________________________________________________________________\n| 1 = Feed       |    2 = Give water    |   3 = Play with a pet   |\n| 4 = Adopt      |    5 = Surrender     |         6 = Oil         |\n| 7 = Walk a dog | 8 = Clean a dog cage | 9 = Clean the litterbox |\n|________________|______ 10 = Exit _____|_________________________|");

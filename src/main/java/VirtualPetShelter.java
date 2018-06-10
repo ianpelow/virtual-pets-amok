@@ -76,9 +76,7 @@ public class VirtualPetShelter {
 		public void displayStatus() {
 		for(VirtualPet pet : pets.values()) {
 			pet.getStatus();
-		
-	
-	}
+		}
 		
 		
 	}
