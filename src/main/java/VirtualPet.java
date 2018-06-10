@@ -84,7 +84,7 @@ public class VirtualPet {
 	}
 
 	public int walkDog() {
-		return 0;
+		return amount;
 	}
 	
 	public int cleanLitterBox() {

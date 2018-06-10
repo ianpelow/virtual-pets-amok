@@ -18,7 +18,7 @@ public class Robotic extends VirtualPet {
 	
 	@Override
 	public void getStatus () {
-	System.out.println(getPetName() + " - " + getDescription() + " / Happiness: " + getHappiness() + "Oil Level: " + oil + " / Health Level: " + getHealth());
+	System.out.println(getPetName() + " - " + getDescription() + " / Happiness: " + getHappiness() + " / Oil Level: " + oil + " / Health Level: " + getHealth());
 	}
 
 }

@@ -52,8 +52,10 @@ public class Organic extends VirtualPet {
 	}
 	
 	public void singleTick() {
-		hunger -= 2;
-		thirst -= 2;
+		hunger -= amount / 5;
+		thirst -= amount / 5;
+		happiness -= amount / 5;
+		health -= amount / 5;
 	}
 	
 	@Override

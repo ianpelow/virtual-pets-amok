@@ -8,8 +8,8 @@ public class VirtualPetShelterTest {
 	VirtualPetShelter testAnimalShelter = new VirtualPetShelter();
 
 	@Test
-	public void shouldFeedAllPets() {
-		VirtualPet petTestFeedAll = new VirtualPet(null, null, 0, 0, 0, 0);
+	public void shouldFeedAllOrganicPets() {
+		VirtualPet petTestFeedAll = new Organic(null, null, 0, 0, 0, 0);
 		testAnimalShelter.addPet(petTestFeedAll);
 		int preTest = petTestFeedAll.getHunger();
 		testAnimalShelter.feedPets();
@@ -18,8 +18,8 @@ public class VirtualPetShelterTest {
 	}
 
 	@Test
-	public void shouldGiveAllPetsWater() {
-		VirtualPet petTestGiveAllWater = new VirtualPet(null, null, 0, 0, 0, 0);
+	public void shouldGiveAllOrganicPetsWater() {
+		VirtualPet petTestGiveAllWater = new Organic(null, null, 0, 0, 0, 0);
 		testAnimalShelter.addPet(petTestGiveAllWater);
 		int preTest = petTestGiveAllWater.getThirst();
 		testAnimalShelter.waterAllPets();
@@ -72,6 +72,16 @@ public class VirtualPetShelterTest {
 		VirtualPet petStatusDisplay = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.displayStatus();
 //		Assert.asserteEquals(petStatusDisplay.getStatus());
+	}
+	
+	@Test
+	public void shouldWalkAllDogs() {
+		VirtualPet petTestWalkAllDogs = new Organic(null, null, 0, 0, 0, 0);
+		testAnimalShelter.addPet(petTestWalkAllDogs);
+		int preTest = petTestWalkAllDogs.getThirst();
+		testAnimalShelter.waterAllPets();
+		int underTest = petTestWalkAllDogs.getThirst();
+		assertTrue(preTest < underTest);
 	}
 
 }

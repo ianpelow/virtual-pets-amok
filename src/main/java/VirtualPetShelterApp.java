@@ -11,24 +11,33 @@ public class VirtualPetShelterApp {
 
 		Scanner input = new Scanner(System.in);
 		boolean continueWithApp = true;
+		Random random = new Random();
 
 		VirtualPetShelter virtualPetShelter = new VirtualPetShelter();
-		VirtualPet pet1 = new VirtualPet("Shadow", "well-behaved and intelligent Golden Retriever", 60, 40, 50, 0);
-		VirtualPet pet2 = new VirtualPet("Chance", "young and energetic American Bulldog", 50, 50, 40, 0);
-		VirtualPet pet3 = new VirtualPet("Sassy", "sassy Himalayan", 40, 60, 60, 0);
+		VirtualPet Shadow = new OrganicDog("Shadow", "ORGANIC MALE - Well-behaved and intelligent Golden Retriever", 65, 40, 85, 90);
+		VirtualPet Chance = new OrganicDog("Chance", "ORGANIC MALE - Young and energetic American Bulldog", 50, 60, 90, 55);
+		VirtualPet Sassy = new OrganicCat("Sassy", "ORGANIC FEMALE - Eccentrically opinionated Himalayan", 40, 60, 50, 95);
+		VirtualPet Terminator = new RoboticDog("Terminator", "ROBOTIC MALE - One-person guard dog German Shepherd", 20, 75, 50);
+		VirtualPet KittyCatBot = new RoboticCat("KittyCatBot", "ROBOTIC FEMALE - cunning and independent", 25, 85, 85);
+		VirtualPet CuddlyKitty = new RoboticCat("CuddlyKitty", "ROBOTIC FEMALE - somehow provides extraordinary cuddles though composed of solid steel. Just come find out", 95, 30, 85);
+		
+		virtualPetShelter.addPet(Shadow);
+		virtualPetShelter.addPet(Chance);
+		virtualPetShelter.addPet(Sassy);
+		virtualPetShelter.addPet(Terminator);
+		virtualPetShelter.addPet(KittyCatBot);
+		virtualPetShelter.addPet(CuddlyKitty);
+		
 
-		virtualPetShelter.addPet(pet1);
-		virtualPetShelter.addPet(pet2);
-		virtualPetShelter.addPet(pet3);
-
-		System.out.println();
 		System.out.println("Welcome to the Virtual Pet Shelter!");
-		System.out.println("\nThis is the status of our pets: ");
+		System.out.println();
+		System.out.println("This is the current status of our pets: ");
 
 		while (continueWithApp = true) {
 			virtualPetShelter.displayStatus();
+			System.out.println();
 			System.out.println("What would you like to do?");
-			System.out.println("1 = feed / 2 = give water / 3 = play with a pet / 4 = adopt / 5 = surrender / 6 = Leave shelter");
+			System.out.println("__________________________________________________________________\n| 1 = Feed       |    2 = Give water    |   3 = Play with a pet   |\n| 4 = Adopt      |    5 = Surrender     |         6 = Oil         |\n| 7 = Walk a dog | 8 = Clean a dog cage | 9 = Clean the litterbox |\n|________________|______ 10 = Exit _____|_________________________|");
 			System.out.println();
 
 			String menuChoice = input.nextLine();
@@ -92,16 +101,16 @@ public class VirtualPetShelterApp {
 				virtualPetShelter.allPetTick();
 				System.out.println();				
 				
-			} else if (menuChoice.equals("10")) {
-				System.out.println("Okay, bye!");
-				System.exit(0);
-				
 			} else if (menuChoice.equals("9")) {
 				virtualPetShelter.cleanLitterBox();
 				System.out.println("You cleaned the messy shelter litterbox! Thank you!");
 				System.out.println();
-			}
 
+			} else if (menuChoice.equals("10")) {
+				System.out.println("Okay, bye!");
+				System.exit(0);
+			}
+			
 			virtualPetShelter.allPetTick();
 		}
 

@@ -8,6 +8,7 @@ public class OrganicDog extends Organic {
 	public void walkDogs() {
 		happiness += amount / 2;
 		waste += amount /2;
+		thirst -= amount / 2;
 	}
 	
 
