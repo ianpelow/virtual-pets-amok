@@ -22,26 +22,25 @@ public class VirtualPetShelterApp {
 		virtualPetShelter.addPet(pet3);
 
 		System.out.println();
-		System.out.println("Welcome to Donny's Virtual Pet Shelter!");
+		System.out.println("Welcome to the Virtual Pet Shelter!");
 		System.out.println("\nThis is the status of our pets: ");
 
 		while (continueWithApp = true) {
 			virtualPetShelter.displayStatus();
 			System.out.println("What would you like to do?");
-			System.out.println(
-					"1 = feed / 2 = give water / 3 = play with a pet / 4 = adopt / 5 = surrender / 6 = Leave shelter");
+			System.out.println("1 = feed / 2 = give water / 3 = play with a pet / 4 = adopt / 5 = surrender / 6 = Leave shelter");
 			System.out.println();
 
 			String menuChoice = input.nextLine();
 			if (menuChoice.equals("1")) {
 				virtualPetShelter.feedPets();
-				System.out.println("All of the pets in the shelter have been fed!");
+				System.out.println("All of the organic pets in the shelter have been fed!");
 				virtualPetShelter.allPetTick();
 				System.out.println();
 
 			} else if (menuChoice.equals("2")) {
 				virtualPetShelter.waterAllPets();
-				System.out.println("All of the pets in the shelter have been given some water!");
+				System.out.println("All of the organic pets in the shelter have been given some water!");
 				System.out.println();
 
 			} else if (menuChoice.equals("3")) {
@@ -60,10 +59,11 @@ public class VirtualPetShelterApp {
 				System.out.println("I'm sure " + petName + " has found an amazing new family!");
 
 			} else if (menuChoice.equals("5")) {
-				System.out.println(
-						"We have room for another pet in our shelter. Let me just ask you a few things about the pet you are surrendering to us...");
-				System.out.println("Male or female?");
-				String newPetMaleOrFemale = input.nextLine();
+				System.out.println("We have room for another pet in our shelter. Let me just ask you a few things about the pet you are surrendering to us...");
+				System.out.println("Organic or robotic?");
+				String newPetOrganicOrRobtoic = input.nextLine();
+				System.out.println("Dog or cat?");
+				String newPetDogOrCat = input.nextLine();
 				System.out.println("Their name?");
 				String newPetName = input.nextLine();
 				System.out.println("Color?");
@@ -80,8 +80,8 @@ public class VirtualPetShelterApp {
 				System.out.println();
 				
 			} else if (menuChoice.equals("7")) {
-				virtualPetShelter.waterAllPets();
-// WALK METHOD				System.out.println("You walked all of the dogs! Thank you!");
+				virtualPetShelter.walkDogs();
+				System.out.println("You walked all of the dogs! Thank you!");
 				System.out.println();
 				
 			} else if (menuChoice.equals("8")) {
@@ -95,7 +95,11 @@ public class VirtualPetShelterApp {
 			} else if (menuChoice.equals("10")) {
 				System.out.println("Okay, bye!");
 				System.exit(0);
-
+				
+			} else if (menuChoice.equals("9")) {
+				virtualPetShelter.cleanLitterBox();
+				System.out.println("You cleaned the messy shelter litterbox! Thank you!");
+				System.out.println();
 			}
 
 			virtualPetShelter.allPetTick();

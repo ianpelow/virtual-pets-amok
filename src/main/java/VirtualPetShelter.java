@@ -60,6 +60,13 @@ public class VirtualPetShelter {
 	public void cleanADogCage(String petName) {
 		getAPet(petName).cleanDogCage();
 	}
+	
+	public void walkDogs() {
+		for (VirtualPet pet : pets.values()) {
+			pet.walkDog();
+		}
+		
+	}
 
 	public void allPetTick() {
 		for(VirtualPet pet: pets.values()) {

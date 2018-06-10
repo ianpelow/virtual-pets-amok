@@ -1,10 +1,10 @@
 
 public class Organic extends VirtualPet {
 
-	private int hunger;
-	private int thirst;
-	private int waste;
-	private int amount = 10;
+	protected int hunger;
+	protected int thirst;
+	protected int waste;
+	protected int amount = 10;
 	
 	public Organic(String petName, String description, int hunger, int thirst, int happiness, int health) {
 		super(petName, description, hunger, thirst, happiness, health);
@@ -21,6 +21,7 @@ public class Organic extends VirtualPet {
 	@Override
 	public int feedPet() {
 		hunger += amount;
+		thirst -= amount /5;
 		return hunger;
 	}
 

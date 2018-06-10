@@ -4,7 +4,7 @@ public class VirtualPet {
 	private String description;
 	protected int happiness;
 	private int HEALTH_LEVEL = 100;
-	private int health = HEALTH_LEVEL;
+	protected int health = HEALTH_LEVEL;
 	private int amount = 10;
 
 	public String getPetName() {
@@ -80,6 +80,14 @@ public class VirtualPet {
 	}
 
 	public int cleanDogCage() {
+		return 0;
+	}
+
+	public int walkDog() {
+		return 0;
+	}
+	
+	public int cleanLitterBox() {
 		return 0;
 	}
 	

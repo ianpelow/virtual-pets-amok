@@ -3,7 +3,7 @@ public class Robotic extends VirtualPet {
 
 	private int OIL_LEVEL = 100;
 	private int oil = OIL_LEVEL;
-	private int amount = 10;
+	protected int amount = 10;
 
 	public Robotic(String name, String description, int happiness, int health, int oil) {
 		super(name, description, health, happiness, health, oil);

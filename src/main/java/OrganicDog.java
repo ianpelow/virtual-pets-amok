@@ -1,43 +1,14 @@
 
 public class OrganicDog extends Organic {
 
-	public OrganicDog(String name, String description, int health, int happiness) {
-		super(name, description, health, happiness);
+	public OrganicDog(String name, String description, int hunger, int thirst, int happiness, int health) {
+		super(name, description, hunger, thirst, happiness, health);
 	}
 
-	public int getCleanDogCage() {
-		return waste;
-	}
-
-	public void setCleanDogCage(int waste) {
-		this.waste = waste;
-	}
-	
-	public int getWalkDogs() {
-		return happiness;
-	}
-
-	public void setWalkDogs(int happiness) {
-		this.happiness = happiness;
-	}
-	
-	public int cleanDogCage() {
-		health += amount / 2;
-		waste += amount;
+	public void walkDogs() {
 		happiness += amount / 2;
-		return waste;
+		waste += amount /2;
 	}
 	
-	public String walkDogs() {
-		happiness += amount;
-		health += amount / 2;
-		thirst -= amount /2;
-		waste += amount / 2;
-		return null;
-	}
-	
-	public void wasteInDogCageTick() {
-		waste -= amount / 5;
-	}
 
 }
