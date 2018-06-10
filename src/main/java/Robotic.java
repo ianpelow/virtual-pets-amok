@@ -2,27 +2,23 @@
 public class Robotic extends VirtualPet {
 
 	private int OIL_LEVEL = 100;
-	protected int oil = OIL_LEVEL;
+	private int oil = OIL_LEVEL;
 	private int amount = 10;
 
-	public Robotic(String name, String description, int health, int happiness) {
-		super(name, description, health, happiness);
+	public Robotic(String name, String description, int happiness, int health, int oil) {
+		super(name, description, health, happiness, health, oil);
+		this.oil = oil;
 	}
 	
-	public int getOil()  {
+	@Override
+	public int oilPet() {
+		oil += amount;
 		return oil;
 	}
 	
-	public void setOil(int oil) {
-		this.oil = oil;
-	}
-
-	public void singleTick() {
-		oil -= amount / 5;
-	}
-
+	@Override
 	public void getStatus () {
-	System.out.println(petName + " - " + description + " / Happiness: " + happiness + "Oil Level: " + oil + " / Health Level: " + health);
+	System.out.println(getPetName() + " - " + getDescription() + " / Happiness: " + getHappiness() + "Oil Level: " + oil + " / Health Level: " + getHealth());
 	}
 
 }

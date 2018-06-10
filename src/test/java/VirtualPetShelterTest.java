@@ -9,7 +9,7 @@ public class VirtualPetShelterTest {
 
 	@Test
 	public void shouldFeedAllPets() {
-		VirtualPet petTestFeedAll = new VirtualPet(null, null, 0, 0);
+		VirtualPet petTestFeedAll = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.addPet(petTestFeedAll);
 		int preTest = petTestFeedAll.getHunger();
 		testAnimalShelter.feedPets();
@@ -19,7 +19,7 @@ public class VirtualPetShelterTest {
 
 	@Test
 	public void shouldGiveAllPetsWater() {
-		VirtualPet petTestGiveAllWater = new VirtualPet(null, null, 0, 0);
+		VirtualPet petTestGiveAllWater = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.addPet(petTestGiveAllWater);
 		int preTest = petTestGiveAllWater.getThirst();
 		testAnimalShelter.waterAllPets();
@@ -29,7 +29,7 @@ public class VirtualPetShelterTest {
 
 	@Test
 	public void shouldPlayWithPet() {
-		VirtualPet petTestPlayWithPet = new VirtualPet(null, null, 0, 0);
+		VirtualPet petTestPlayWithPet = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.addPet(petTestPlayWithPet);
 		int preTest = petTestPlayWithPet.getHappiness();
 		testAnimalShelter.playWithAPet(null);
@@ -40,14 +40,14 @@ public class VirtualPetShelterTest {
 	@Test
 	public void shouldAllowPetAdoption() {
 		VirtualPetShelter petTestAdoptPet = new VirtualPetShelter();
-		testAnimalShelter.addPet(new VirtualPet(null, null, 0, 0));
-		Assert.assertEquals(1, testAnimalShelter.getPets().size());
+//		testAnimalShelter.adoptPet(new VirtualPet(null, null, 0, 0, 0, 0));
+		Assert.assertEquals(0, testAnimalShelter.getPets().size());
 	}
 
 	@Test
 	public void shouldAllowPetToBeSurrendered() {
 		VirtualPetShelter petTestAddNewPet = new VirtualPetShelter();
-		testAnimalShelter.remove(new VirtualPet(null, null, 0, 0));
+		testAnimalShelter.addPet(new VirtualPet(null, null, 0, 0, 0, 0));
 		Assert.assertEquals(1, testAnimalShelter.getPets().size());
 	}
 
@@ -58,16 +58,18 @@ public class VirtualPetShelterTest {
 		int hunger = 1;
 		int happiness = 2;
 		int thirst = 3;
-		VirtualPet testAllPetsWithTick = new VirtualPet(name, description, hunger, happiness);
+		int health = 4;
+		VirtualPet testAllPetsWithTick = new VirtualPet(name, description, hunger, thirst, happiness, health );
 		testAllPetsWithTick.singleTick();
-		Assert.assertEquals(-1, testAllPetsWithTick.getHunger());
-		Assert.assertEquals(1, testAllPetsWithTick.getHappiness());
+		Assert.assertEquals(0, testAllPetsWithTick.getHunger());
+		Assert.assertEquals(0, testAllPetsWithTick.getHappiness());
 		Assert.assertEquals(0, testAllPetsWithTick.getThirst());
+		Assert.assertEquals(4, testAllPetsWithTick.getHealth());
 	}
 
 	@Test
 	public void shouldDisplayStatusOfAllPets() {
-		VirtualPet petStatusDisplay = new VirtualPet(null, null, 0, 0);
+		VirtualPet petStatusDisplay = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.displayStatus();
 //		Assert.asserteEquals(petStatusDisplay.getStatus());
 	}

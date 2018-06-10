@@ -1,19 +1,11 @@
 public class VirtualPet {
 
-	protected String petName;
-	protected String description;
-	private int HEALTH_LEVEL = 100;
-	protected int health = HEALTH_LEVEL;
+	private String petName;
+	private String description;
 	protected int happiness;
+	private int HEALTH_LEVEL = 100;
+	private int health = HEALTH_LEVEL;
 	private int amount = 10;
-
-	public VirtualPet(String name, String description, int health, int happiness) {
-		super();
-		this.petName = name;
-		this.description = description;
-		this.health = health;
-		this.happiness = happiness;
-	}
 
 	public String getPetName() {
 		return petName;
@@ -30,60 +22,68 @@ public class VirtualPet {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	public int getHealth() {
-		return health;
-	}
-
-	public void setHealth(int health) {
-		this.health = health;
-	}
 
 	public int getHappiness() {
 		return happiness;
 	}
-	
+
 	public void setHappiness(int happiness) {
-		this.happiness = happiness;	
+		this.happiness = happiness;
 	}
 
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth() {
+		this.health = health;
+	}
 
 	public int playWithPet() {
 		happiness += amount;
 		return happiness;
 	}
 
-	
+	public VirtualPet(String petName, String description, int hunger, int thirst, int happiness, int health) {
+				super();
+				this.petName = petName;
+				this.description = description;
+				this.happiness = happiness;	
+				this.health = health;
+			}
 
 	public void singleTick() {
 		happiness -= 2;
-		health -= 2;
 	}
 
-	public void getStatus() {
-		return;
+	public int feedPet() {
+		return 0;
+	}
+	
+	public int waterPet() {
+		return 0;
+	}
+
+	public int oilPet() {
+		return 0;
+	}
+
+	public void getStatus() {	
 	}
 
 	public int getHunger() {
-		return getHunger();
+		return 0;
 	}
-	
+
 	public int getThirst() {
-		return getThirst();
+		return 0;
 	}
 
-	public void feedPet() {
-	}
-
-	public void waterPet() {	
+	public int cleanDogCage() {
+		return 0;
 	}
 	
-	public void oilAllRobots() {
-	}
 
-
+	
+			
 }
-
-
-		
-

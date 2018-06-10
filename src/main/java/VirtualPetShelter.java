@@ -4,10 +4,19 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	Map<String, VirtualPet> pets = new HashMap<>();
+	Map<String, VirtualPet> pets = new HashMap();
 
 	public Collection<VirtualPet> getPets() {
 		return pets.values();
+	}
+	
+	private int litterBoxLevel = 10;
+	
+	public void cleanLitterBox() {
+		litterBoxLevel = 0;
+	}
+	public int getLitterBoxLevel() {
+		return litterBoxLevel;
 	}
 
 	public VirtualPet getAPet(String petName) {
@@ -38,17 +47,21 @@ public class VirtualPetShelter {
 		}
 	}
 	
-	public void oilAllRobots() {
+	public void oilAllPets() {
 		for (VirtualPet pet : pets.values()) {
-			pet.oilAllRobots();
+			pet.oilPet();
 		}
 	}
 
 	public void playWithAPet(String petName) {
 		getAPet(petName).playWithPet();
 	}
+	
+	public void cleanADogCage(String petName) {
+		getAPet(petName).cleanDogCage();
+	}
 
-	public void singleTick() {
+	public void allPetTick() {
 		for(VirtualPet pet: pets.values()) {
 			pet.singleTick();
 		}
@@ -56,17 +69,11 @@ public class VirtualPetShelter {
 		public void displayStatus() {
 		for(VirtualPet pet : pets.values()) {
 			pet.getStatus();
-		}
+		
+	
 	}
 		
-		public void feedPet(String petName) {
-		}
-
-		public void waterPet(String petName) {	
-		}
-
-		public void remove(VirtualPet petName) {
-		}
-
+		
+	}
 
 }

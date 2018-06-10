@@ -5,11 +5,11 @@ public class OrganicDog extends Organic {
 		super(name, description, health, happiness);
 	}
 
-	public int getCleanAllCages() {
+	public int getCleanDogCage() {
 		return waste;
 	}
 
-	public void setCleanAllCages(int waste) {
+	public void setCleanDogCage(int waste) {
 		this.waste = waste;
 	}
 	
@@ -21,18 +21,19 @@ public class OrganicDog extends Organic {
 		this.happiness = happiness;
 	}
 	
-	public int cleanAllCages() {
+	public int cleanDogCage() {
 		health += amount / 2;
 		waste += amount;
 		happiness += amount / 2;
 		return waste;
 	}
 	
-	public void walkDogs() {
+	public String walkDogs() {
 		happiness += amount;
 		health += amount / 2;
 		thirst -= amount /2;
 		waste += amount / 2;
+		return null;
 	}
 	
 	public void wasteInDogCageTick() {
