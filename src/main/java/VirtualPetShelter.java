@@ -6,38 +6,67 @@ public class VirtualPetShelter {
 
 	Map<String, VirtualPet> pets = new HashMap<>();
 
-	public int getPetCount() {
-		return pets.size();
+	public Collection<VirtualPet> getPets() {
+		return pets.values();
 	}
 
-	public void addPet(String pet) {
-		pets.put(pet, null);
-
+	public VirtualPet getAPet(String petName) {
+		return pets.get(petName);
 	}
 
-	public void remove(String pet) {
-		pets.remove(pet);
-		
+	public void addPet(VirtualPet pet) {
+		pets.put(pet.getPetName(), pet);
+	}
+
+	public void addNewPet(String newPetName) {
+		addNewPet(newPetName);
+	}
+
+	public void adoptPet(String petName) {
+		pets.remove(petName);
+	}
+
+	public void feedPets() {
+		for (VirtualPet pet : pets.values()) {
+			pet.feedPet();
+		}
+	}
+
+	public void waterAllPets() {
+		for (VirtualPet pet : pets.values()) {
+			pet.waterPet();
+		}
 	}
 	
-	public void allPetTick(VirtualPet pet) {
-		pets.putAll(pets);
-
-	}
-	
-	public void feedPet(VirtualPet pet) {
-		pets.put(null, pet);
+	public void oilAllRobots() {
+		for (VirtualPet pet : pets.values()) {
+			pet.oilAllRobots();
+		}
 	}
 
-	public void waterPet(VirtualPet pet) {
-		pets.put(null, pet);
+	public void playWithAPet(String petName) {
+		getAPet(petName).playWithPet();
 	}
 
-	public void playWithPet(String petName) {
-		pets.get(null);
+	public void singleTick() {
+		for(VirtualPet pet: pets.values()) {
+			pet.singleTick();
+		}
+	}
+		public void displayStatus() {
+		for(VirtualPet pet : pets.values()) {
+			pet.getStatus();
+		}
+	}
 		
-	}
+		public void feedPet(String petName) {
+		}
 
+		public void waterPet(String petName) {	
+		}
+
+		public void remove(VirtualPet petName) {
+		}
 
 
 }

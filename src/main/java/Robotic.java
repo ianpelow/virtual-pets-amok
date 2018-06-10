@@ -7,25 +7,22 @@ public class Robotic extends VirtualPet {
 
 	public Robotic(String name, String description, int health, int happiness) {
 		super(name, description, health, happiness);
-
 	}
-
-	public int getOilLevel() {
+	
+	public int getOil()  {
 		return oil;
 	}
-
-	public void setOilLevel(int oil) {
+	
+	public void setOil(int oil) {
 		this.oil = oil;
 	}
 
-	public void oilPet() {
-		health += amount / 2;
-		happiness += amount / 3;
+	public void singleTick() {
+		oil -= amount / 5;
 	}
 
-	public void playWithRoboticPet() {
-		happiness += amount;
-		health += amount;
+	public void getStatus () {
+	System.out.println(petName + " - " + description + " / Happiness: " + happiness + "Oil Level: " + oil + " / Health Level: " + health);
 	}
 
 }
