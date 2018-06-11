@@ -40,7 +40,7 @@ public class VirtualPetShelterTest {
 	@Test
 	public void shouldAllowPetAdoption() {
 		VirtualPetShelter petTestAdoptPet = new VirtualPetShelter();
-//		testAnimalShelter.adoptPet(new VirtualPet(null, null, 0, 0, 0, 0));
+	//	testAnimalShelter.adoptPet(new VirtualPet(null, null, 0, 0, 0, 0));
 		Assert.assertEquals(0, testAnimalShelter.getPets().size());
 	}
 
@@ -71,18 +71,9 @@ public class VirtualPetShelterTest {
 	public void shouldDisplayStatusOfAllPets() {
 		VirtualPet petStatusDisplay = new VirtualPet(null, null, 0, 0, 0, 0);
 		testAnimalShelter.displayStatus();
-//		Assert.asserteEquals(petStatusDisplay.getStatus());
+	//	Assert.asserteEquals(petStatusDisplay.getStatus());
 	}
 	
-	@Test
-	public void shouldWalkAllDogs() {
-		VirtualPet petTestWalkAllDogs = new Organic(null, null, 0, 0, 0, 0);
-		testAnimalShelter.addPet(petTestWalkAllDogs);
-		int preTest = petTestWalkAllDogs.getThirst();
-		testAnimalShelter.waterAllPets();
-		int underTest = petTestWalkAllDogs.getThirst();
-		assertTrue(preTest < underTest);
-	}
 
 }
 
