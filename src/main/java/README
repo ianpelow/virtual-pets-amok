@@ -1,0 +1,6 @@
+This app, virtual-pets-amok, is an extension of the virtual-pet-shelter app.
+
+The shelter has now added robotic pets and displays the value of their oil level, as they do not have hunger or thirst. Actions have been altered to
+affect multiple values, as opposed to just one. A litterbox used by all cats (we know that's not how it works in real life) can now be cleaned and dogs
+now have cages that get dirtier as time goes by. The format of the app (pet status display, menu, etc.) has been edited to be more informational,
+functional, and aesthetic.

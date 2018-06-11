@@ -45,12 +45,12 @@ public class VirtualPet {
 	}
 
 	public VirtualPet(String petName, String description, int hunger, int thirst, int happiness, int health) {
-				super();
-				this.petName = petName;
-				this.description = description;
-				this.happiness = happiness;	
-				this.health = health;
-			}
+		super();
+		this.petName = petName;
+		this.description = description;
+		this.happiness = happiness;
+		this.health = health;
+	}
 
 	public void singleTick() {
 		happiness -= 2;
@@ -59,7 +59,7 @@ public class VirtualPet {
 	public int feedPet() {
 		return 0;
 	}
-	
+
 	public int waterPet() {
 		return 0;
 	}
@@ -68,7 +68,11 @@ public class VirtualPet {
 		return 0;
 	}
 
-	public void getStatus() {	
+	public int cleanAllCages() {
+		return 0;
+	}
+
+	public void getStatus() {
 	}
 
 	public int getHunger() {
@@ -86,12 +90,5 @@ public class VirtualPet {
 	public int walkDog() {
 		return amount;
 	}
-	
-	public int cleanLitterBox() {
-		return 0;
-	}
-	
 
-	
-			
 }
