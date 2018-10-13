@@ -4,7 +4,7 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-	Map<String, VirtualPet> pets = new HashMap();
+	Map<String, VirtualPet> pets = new HashMap<String, VirtualPet>();
 
 	public Collection<VirtualPet> getPets() {
 		return pets.values();
